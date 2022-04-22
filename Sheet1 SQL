@@ -1,0 +1,89 @@
+CREATE DATABASE Devesh
+use Devesh
+CREATE  TABLE devINFO(Id int primary key identity,First_Name varchar(40),last_name varchar(30),salary varchar(max),
+Department varchar(20),gender varchar(20))
+
+insert into devINFO values ('Devesh','Kumar','50000','it','male')
+insert into devINFO values ('Sejal','Verma','30000','hr','female');
+insert into devINFO values ('Mohan','Verma','30000','hr','female');
+insert into devINFO values ('Versha','Verma','20000','tm','female');
+insert into devINFO values('Rajesh','Kumar','45000','tl','male');
+insert into devINFO values ('Ramesh','Kumar','19000','tm','male');
+insert into devINFO values ('Monika','Chaudhary','22500','tm','female');
+
+
+SELECT* FROM devINFO
+ALTER TABLE devINFO ADD MOBILE varchar(40)
+
+update devINFO SET MOBILE='9084760656' WHERE ID=1
+update devINFO SET MOBILE='9554543535' WHERE ID=2
+update devINFO SET MOBILE='9084740656' WHERE ID=3
+update devINFO SET MOBILE='9084755656' WHERE ID=4
+update devINFO SET MOBILE='9884760656' WHERE ID=5
+update devINFO SET MOBILE='9894760656' WHERE ID=6
+update devINFO SET MOBILE='9015460656' WHERE ID=7
+
+
+
+select id,first_name,last_name,salary,GETDATE()
+as NOWdate,Department,Gender,mobile
+from devINFO
+
+delete from devINFO where id='6'
+SELECT id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,MOBILE
+FROM devINFO WHERE SALARY <=10000
+
+update devINFO set SALARY='9000' where id='4'
+update devINFO set SALARY='8000' where id='2'
+
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,MOBILE
+from devINFO where salary>=9000 and salary<25000
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,MOBILE 
+from devINFO where salary not between 9000 and 15000
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,MOBILE
+from devINFO where First_Name like'r%'
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,MOBILE
+from devINFO where last_name like'%i'
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,MOBILE
+from devINFO where First_Name like '%a%'
+
+select * from devINFO where First_Name like'__s%'
+
+SELECT*FROM devINFO where First_Name LIKE 'v%' AND salary<=25000
+
+SELECT * FROM devINFO where SALARY > 15000 AND salary <'sejal'
+
+
+SELECT*FROM devINFO where id LIKE '1%' and id like '%1'
+UPDATE devINFO set Department =null where id =4
+UPDATE devINFO set Department ='team_leader' where id =2
+
+UPDATE devINFO set salary =9000 where First_Name like 'r%' and Department ='null'
+
+UPDATE devINFO set salary =25000 where First_Name like 'r%' and id<=4
+
+select*from devINFO
+
+
+
+
+
+UPDATE devINFO  set Department = 30 where First_Name like '_A%'
+
+UPDATE devINFO set salary=8500 where Id between 3 and 5
+
+
+UPDATE devINFO set salary=8500 where id not between 1 and 3
+
+UPDATE devINFO set salary=15000 where First_Name like '%a' and Department ='tm'
+
+UPDATE devINFO set salary=5500 where id like '%2' and Department like 't%'
+
+UPDATE devINFO set salary=18000 where salary <26000 and First_Name like '%a%' and  Department <= '30'
+
+UPDATE devINFO set salary=14000 where salary >= 15000 and SALARY<=20000
